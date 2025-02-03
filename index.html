@@ -243,14 +243,20 @@
     
                 const result = await response.json();
                 console.log("Server response:", result);
-                alert(result.status === "Success" ? "Message Sent!" : "Error: " + result.error);
-                this.reset();
+    
+                if (result.status === "Success") {
+                    alert("Message Sent!");
+                    this.reset();
+                } else {
+                    alert("Error: " + result.error);
+                }
             } catch (error) {
                 console.error("Fetch Error:", error);
                 alert("An error occurred while submitting the form.");
             }
         });
     </script>
+    
     
         <div class="social-links">
           <a href="tel:+919422860229" class="social-link">
