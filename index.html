@@ -231,71 +231,17 @@
         <div class="section-divider"></div>
       </div>
       <div class="contact-content">
-        <form
-          action="https://formsubmit.co/el/kodida"
-          method="POST"
-          class="contact-form"
-        >
-          <input
-            type="text"
-            name="name"
-            class="form-input"
-            placeholder="Your Name"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            class="form-input"
-            placeholder="Your Email"
-            required
-          />
-          <textarea
-            name="message"
-            class="form-input"
-            placeholder="Your Message"
-            required
-          ></textarea>
-
-          <!-- Prevent spam -->
-          <input type="hidden" name="_captcha" value="false" />
-
-          <!-- Redirect to a thank-you page -->
-          <input
-            type="hidden"
-            name="_next"
-            value="https://krishnarandad.vercel.app/thank-you.html"
-          />
-
-          <!-- Email Subject -->
-          <input
-            type="hidden"
-            name="_subject"
-            value="New Contact Form Submission"
-          />
-
-          <!-- Enable Reply-to Field -->
-          <input type="hidden" name="_replyto" value="email" />
-
-          <!-- Send a Copy to Yourself -->
-          <input
-            type="hidden"
-            name="_cc"
-            value="krishnaengg.work2022@gmail.com"
-          />
-
-          <!-- Auto-response to user -->
-          <input
-            type="hidden"
-            name="_autoresponse"
-            value="Thank you for reaching out! I'll get back to you soon."
-          />
-
-          <!-- Use table format for better readability -->
-          <input type="hidden" name="_template" value="table" />
-
+        <form id="contact-form" action="https://formspree.io/f/xqaebnov" method="POST">
+          <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+          <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+          <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+      
+          <!-- Success Message -->
+          <p id="success-message" style="display: none; color: green;">Message sent successfully! ✅</p>
+      
           <button type="submit" class="cta-btn">Send Message</button>
-        </form>
+      </form>
+      
 
         <div class="social-links">
           <a href="tel:+919422860229" class="social-link">

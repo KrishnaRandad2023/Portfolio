@@ -93,3 +93,29 @@ window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+
+
+document.getElementById("contact-form").addEventListener("submit", async function (event) {
+  event.preventDefault(); // Prevent page reload
+
+  let form = event.target;
+  let formData = new FormData(form);
+
+  try {
+      let response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+          document.getElementById("success-message").style.display = "block"; // Show success message
+          form.reset(); // Clear the form
+      } else {
+          alert("Error sending message. Please try again."); // Show error
+      }
+  } catch (error) {
+      alert("Something went wrong. Please check your connection.");
+  }
+});
