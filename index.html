@@ -237,6 +237,10 @@
                     body: jsonData
                 });
     
+                if (!response.ok) {
+                    throw new Error("Server responded with an error.");
+                }
+    
                 const result = await response.json();
                 console.log("Server response:", result);
                 alert(result.status === "Success" ? "Message Sent!" : "Error: " + result.error);
@@ -247,6 +251,7 @@
             }
         });
     </script>
+    
         <div class="social-links">
           <a href="tel:+919422860229" class="social-link">
             <i class="fas fa-phone"></i>
