@@ -211,11 +211,10 @@
         <div class="section-divider"></div>
       </div>
       <div class="contact-content">
-        <form action="action="https://formsubmit.co/el/kodida"
-" method="POST" class="contact-form">
-          <input type="text" name="name" class="form-input" placeholder="Name" required />
-          <input type="email" name="email" class="form-input" placeholder="Email" required />
-          <textarea name="message" class="form-input" rows="5" placeholder="Message" required></textarea>
+        <form action="https://formsubmit.co/el/kodida" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
       
           <!-- Prevent spam submissions -->
           <input type="hidden" name="_captcha" value="false">
@@ -223,8 +222,9 @@
           <!-- Redirect to a thank-you page after submission (optional) -->
           <input type="hidden" name="_next" value="https://krishnarandad.vercel.app/thank-you.html">
       
-          <button type="submit" class="cta-btn">Send Message</button>
+          <button type="submit">Send Message</button>
       </form>
+      
       
       
     
