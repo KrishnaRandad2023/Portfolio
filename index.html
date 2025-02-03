@@ -223,19 +223,28 @@
             event.preventDefault();
     
             const formData = new FormData(this);
-            const jsonData = JSON.stringify(Object.fromEntries(formData));
-    
-            const response = await fetch("https://script.google.com/macros/s/AKfycbxlZ_9hgmxnXUGzfBkQUiJ2r23PfLjZ374Zk5x64gsFEvswyAYlnqfT3Sxb_Ko4j9Ty/exec", {
-                method: "POST",
-                headers: { 
-                    "Content-Type": "application/json" 
-                },
-                body: jsonData
+            const jsonData = JSON.stringify({
+                name: formData.get("name"),
+                email: formData.get("email"),
+                message: formData.get("message")
             });
     
-            const result = await response.text();
-            alert(result === "Success" ? "Message Sent!" : "Error sending message.");
-            this.reset();
+            try {
+                const response = await fetch("https://script.google.com/macros/s/AKfycbxlZ_9hgmxnXUGzfBkQUiJ2r23PfLjZ374Zk5x64gsFEvswyAYlnqfT3Sxb_Ko4j9Ty/exec", {
+                    method: "POST",
+                    mode: "cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: jsonData
+                });
+    
+                const result = await response.json();
+                console.log("Server response:", result);
+                alert(result.status === "Success" ? "Message Sent!" : "Error: " + result.error);
+                this.reset();
+            } catch (error) {
+                console.error("Fetch Error:", error);
+                alert("An error occurred while submitting the form.");
+            }
         });
     </script>
         <div class="social-links">
