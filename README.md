@@ -1,6 +1,6 @@
 # Krishna Randad | AI/ML Engineer
 
-![Portfolio Preview](https://your-image-link.com)  
+![Portfolio Preview](https://krishnarandad.vercel.app)  
 *A highly interactive and modern portfolio website with a dynamic particle animation background.*
 
 ## 🌟 Overview
