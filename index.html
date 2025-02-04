@@ -29,6 +29,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#Certifications">Certifications</a></li>
         </ul>
         <div class="hamburger">
           <div class="line"></div>
@@ -223,6 +224,67 @@
         </div>
       </div>
     </section>
+  </section>
+  <div class="section" id="Certifications">
+    <h2 class="section-title">Certifications</h2>   
+    <div class="section-divider"></div>
+  </div>
+    <div class="carousel-container">
+      <iframe
+        id="certificateFrame"
+        class="certificate-frame"
+        src="_Accenture North America_ZQ3Z5LBF25FYiWCXL_1727953384017_completion_certificate.pdf"
+      ></iframe>
+    </div>
+  </section>
+
+  <style>
+    .certifications-section {
+      text-align: center;
+      padding: 40px;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 200%;
+      overflow:visible;
+      padding-top: 100px;     
+     }
+    .certificate-frame {
+      width: 80%;
+      height: 700px;
+      border: none;
+    }
+  </style>
+
+  <script>
+    const certificates = [
+      "_Accenture North America_ZQ3Z5LBF25FYiWCXL_1727953384017_completion_certificate.pdf",
+      "100xDevs Certificate Full Stack Web Development (1).pdf",
+      "dsa exc.pdf",
+      "Goldman Sachs Forage NPdeQ43o8P9HJmJzg_MBA4MnZTNFEoJZGnk_ZQ3Z5LBF25FYiWCXL_1730986352370_completion_certificate.pdf",
+      "Internship & Job Preparation Training - Certificate of Completion.pdf",
+      "Krishna google analytics certificate .pdf",
+      "krishna python excellence certificate.pdf",
+      "Machine Learning Training - Certificate of Completion.pdf",
+      "NDSC Machine learning Certificate.pdf",
+      "Participant_Certificate_22BCT0006.pdf",
+    ];
+
+    let currentIndex = 0;
+    const frame = document.getElementById("certificateFrame");
+
+    function showNextCertificate() {
+      currentIndex = (currentIndex + 1) % certificates.length;
+      frame.src = certificates[currentIndex];
+    }
+
+    setInterval(showNextCertificate, 3000); // Change every 5 seconds
+  </script>
 
     <!-- Contact Section -->
     <section class="section" id="contact">
@@ -231,17 +293,39 @@
         <div class="section-divider"></div>
       </div>
       <div class="contact-content">
-        <form id="contact-form" action="https://formspree.io/f/xqaebnov" method="POST">
-          <input type="text" name="name" class="form-input" placeholder="Your Name" required>
-          <input type="email" name="email" class="form-input" placeholder="Your Email" required>
-          <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
-      
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xqaebnov"
+          method="POST"
+        >
+          <input
+            type="text"
+            name="name"
+            class="form-input"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            class="form-input"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            name="message"
+            class="form-input"
+            placeholder="Your Message"
+            required
+          ></textarea>
+
           <!-- Success Message -->
-          <p id="success-message" style="display: none; color: green;">Message sent successfully! ✅</p>
-      
+          <p id="success-message" style="display: none; color: green">
+            Message sent successfully! ✅
+          </p>
+
           <button type="submit" class="cta-btn">Send Message</button>
-      </form>
-      
+        </form>
 
         <div class="social-links">
           <a href="tel:+919422860229" class="social-link">
